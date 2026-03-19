@@ -4,15 +4,12 @@ void main() {
   runApp(const MainApp());
 }
 
-
-class MainApp extends StatelessWidget{
+class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MyHomePage(),
-    );
+    return const MaterialApp(home: MyHomePage());
   }
 }
 
@@ -32,27 +29,24 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Olá Flutter'),
-        ),
+        appBar: AppBar(title: Text('Olá Flutter')),
         body: Center(
           child: Column(
             children: [
-              // TextField(),
-              // TextField(
-              //   // 3. Vincule o controlador ao TextField
-              //   controller: _controller,
-              //   decoration: const InputDecoration(
-              //     labelText: 'Digite seu nome',
-              //     border: OutlineInputBorder(),
-              //   ),
-              //   // 4. Atualize a variável sempre que o texto mudar
-              //   onChanged: (valor) {
-              //     setState(() {
-              //       _nomeUsuario = valor;
-              //     });
-              //   },
-              // ),              
+              TextField(
+                //   // 3. Vincule o controlador ao TextField
+                controller: _controller,
+                decoration: const InputDecoration(
+                  labelText: 'Digite seu nome',
+                  border: OutlineInputBorder(),
+                ),
+                //   // 4. Atualize a variável sempre que o texto mudar
+                onChanged: (valor) {
+                  setState(() {
+                    _nomeUsuario = valor;
+                  });
+                },
+              ),
               // TextField(decoration: InputDecoration(filled: true, fillColor: Colors.red),),
               // TextField(cursorColor: Colors.redAccent, style: TextStyle(color: Colors.blue),),
               // TextField(decoration: InputDecoration(hintStyle: TextStyle(color: Colors.blue), hintText: "Nome do usuário"),),
@@ -87,10 +81,9 @@ class _MyHomePageState extends State<MyHomePage> {
               //   },
               // )
             ],
-          )
+          ),
         ),
       ),
     );
-  }  
-
+  }
 }
